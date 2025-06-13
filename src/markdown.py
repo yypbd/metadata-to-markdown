@@ -50,4 +50,6 @@ class Markdown:
 
                 markdown += line + "|\n"
 
+            markdown += "\n"
+
         return markdown
