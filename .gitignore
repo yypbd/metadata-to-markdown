@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+.idea
+
+.env
+test.py
+test.md
+test_laravel.md
