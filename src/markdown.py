@@ -14,9 +14,9 @@ class Markdown:
         self.database.select_schema(schema)
 
         markdown = f"# {schema} table statement\n\n"
-        table_names = self.database.table_names
-        # TODO : table sort by table name
 
+        table_names = self.database.table_names
+        table_names = sorted(table_names)
         for table_name in table_names:
             table_short_name = self.database.get_table_short_name(table_name)
 
