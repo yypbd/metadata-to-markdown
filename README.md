@@ -1,5 +1,5 @@
 
-# MetaData To ERD
+# MetaData To Markdown
 
 ## Description
 
@@ -35,7 +35,7 @@ uv run main.py show_schemas
 ### generate_markdown
 
 ```bash
-uv run main.py generate_erd \
+uv run main.py generate_markdown \
   --schema=<<schema>> \
   --relation_type=laravel \
   --out_filename=out.md  
