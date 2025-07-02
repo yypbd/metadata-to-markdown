@@ -26,7 +26,7 @@ class Markdown:
 
             markdown += f"**Description:** {desc}\n\n" if desc else ""
 
-            markdown += f"| Column | Type | Not null | PK | FK | Description |\n"
+            markdown += f"| Column | Type | NN | PK | FK | Description |\n"
             markdown += "|---|---|---|---|---|---|\n"
             for column in self.database.get_columns(table_name):
                 column_type = type(column.type).__name__
