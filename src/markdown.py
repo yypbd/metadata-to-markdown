@@ -7,13 +7,15 @@ class Markdown:
 
         self.database = database
 
-    def get(self, schema: str, relation_type: str) -> str | None:
+    def get(self, schema: str, relation_type: str, pagebreak: bool) -> str | None:
         if schema not in self.database.schemas:
             return None
 
         self.database.select_schema(schema)
 
         markdown = f"# {schema} table statement\n\n"
+        if pagebreak:
+            markdown += "\\newpage\n\n"
 
         table_names = self.database.table_names
         table_names = sorted(table_names)
@@ -49,6 +51,10 @@ class Markdown:
                    f" {column.comment if column.comment else ''} |"
 
                 markdown += line + "|\n"
+
+            if pagebreak:
+                # markdown += "\n\\newpage\n\n"
+                markdown += "\n\\newpage\n"
 
             markdown += "\n"
 

@@ -17,7 +17,7 @@ class FireCommand:
         else:
             return "[error] cannot connect to database"
 
-    def generate_markdown(self, schema = '', relation_type = 'none', out_filename = None):
+    def generate_markdown(self, schema = '', relation_type = 'none', pagebreak = False, out_filename = None):
         if out_filename is not None and os.path.exists(out_filename):
             return '[error] Exists - ' + out_filename
 
@@ -34,7 +34,7 @@ class FireCommand:
         if schema not in database.get_schemas():
             return '[error] Not exists schemas'
 
-        output = Markdown(database).get(schema, relation_type)
+        output = Markdown(database).get(schema, relation_type, pagebreak)
         if out_filename is None:
             return output
         else:

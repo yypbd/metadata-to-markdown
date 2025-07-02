@@ -38,6 +38,7 @@ uv run main.py show_schemas
 uv run main.py generate_markdown \
   --schema=<<schema>> \
   --relation_type=laravel \
+  --pagebreak=True \
   --out_filename=out.md  
 ```
 
@@ -45,16 +46,21 @@ uv run main.py generate_markdown \
 
 ### generate_markdown options
 
-| option            | Type     | Value           | Description                                                |
-|-------------------|----------|-----------------|------------------------------------------------------------|
-| schema            | String   |                 | Database schema name.                                      |
-| relation_type     | String   | none<br>laravel | none: Read database FK<br>laravel: laravel migration style |
-| out_filename      | String   |                 | markdown filename                                          |
+| option         | Type     | Value           | Description                                                |
+|----------------|----------|-----------------|------------------------------------------------------------|
+| schema         | String   |                 | Database schema name.                                      |
+| relation_type  | String   | none<br>laravel | none: Read database FK<br>laravel: laravel migration style |
+| pagebreak      | Boolean  |                 | If True, add page break between tables. Default is False.  |
+| out_filename   | String   |                 | markdown filename                                          |
 
 ## Links
 
 ### SQLAlchemy
 
 - [SQLAlchemy Dialects](https://docs.sqlalchemy.org/en/20/dialects/index.html)
+
+### pandoc ext
+
+- [pagebreak](https://github.com/pandoc-ext/pagebreak)
 
 ## Samples
